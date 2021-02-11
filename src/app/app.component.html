@@ -1,0 +1,15 @@
+<div *ngIf="showButton" class="button text-center">
+  <button class="btn btn-light btn-sm" routerLink="trial-page" type="button">
+    START EDDY'S TEST
+  </button>
+</div>
+<div *ngIf="(userDetailsState$ | async) && showButton" class="card card-large">
+  store:
+
+  {{ userDetailsState$ | async | json }}
+</div>
+<div class="view-container">
+  <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+
+  <router-outlet></router-outlet>
+</div>
